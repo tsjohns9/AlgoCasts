@@ -7,6 +7,29 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
-function palindrome(str) {}
+// function easyPalindrome(str) {
+//   return (
+//     str
+//       .split('')
+//       .reverse()
+//       .join('') === str
+//   );
+// }
+
+// function easyPalindrome(str) {
+//   let reversed = '';
+//   for (let char of str) {
+//     reversed = char + reversed;
+//   }
+
+//   return reversed === str;
+// }
+
+// this solution is repetitive. it compares all values twice.
+function palindrome(str) {
+  return str.split('').every((char, i) => char === str[str.length - i - 1]);
+}
+
+console.log(palindrome('aabbaa'));
 
 module.exports = palindrome;

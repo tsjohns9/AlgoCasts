@@ -6,12 +6,6 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function reverse(str) {
-  return str.split('').reduce((reversed, character) => character + reversed);
-}
-
-module.exports = reverse;
-
 // function easyReverse(str) {
 //   return str
 //     .split('')
@@ -26,3 +20,11 @@ module.exports = reverse;
 //   }
 //   return reversed;
 // }
+
+function reverse(str) {
+  return str.split('').reduce((reversed, character) => character + reversed);
+}
+
+reverse('Apple');
+
+module.exports = reverse;
