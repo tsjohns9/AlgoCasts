@@ -6,23 +6,32 @@
 //   reverse('hello') === 'olleh'
 //   reverse('Greetings!') === '!sgniteerG'
 
-function easyReverse(str) {
-  return str
-    .split('')
-    .reverse()
-    .join('');
-}
+// function easyReverse(str) {
+//   return str
+//     .split('')
+//     .reverse()
+//     .join('');
+// }
 
-function midReverse(str) {
-  let reversed = '';
-  for (let char of str) {
-    reversed = char + reversed;
-  }
-  return reversed;
-}
+// function midReverse(str) {
+//   let reversed = '';
+//   for (let char of str) {
+//     reversed = char + reversed;
+//   }
+//   return reversed;
+// }
+
+// function reverse(str) {
+//   return str.split('').reduce((reversed, character) => character + reversed);
+// }
+
+// RECURSIVE
 
 function reverse(str) {
-  return str.split('').reduce((reversed, character) => character + reversed);
+  if (str === '') {
+    return '';
+  }
+  return reverse(str.substr(1)) + str.charAt(0);
 }
 
 reverse('Apple');
